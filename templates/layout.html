@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {%block head%} {%endblock%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/all_style.css') }}">
+    
+</head>
+<body style="width: 500px;">
+    <div style="float:left; width:100px">
+        <ul>
+            <br>
+            <br>
+            <form action="/" method="get">
+                <input type="submit" value="main" >
+            </form>
+            <form action="/blog" method="get">
+                <input type="submit" value="blog">
+            </form>
+            <form action="/photos" method="get">
+                <input type="submit" value="photos">
+            </form>
+            <form action="/quotes" method="get">
+                <input type="submit" value="quotes">
+            </form>
+            <form action="/ml" method="get">
+                <input type="submit" value="ml">
+            </form>
+            <form action="/cmd" method="get">
+                <input type="submit" value="cmd">
+            </form>
+        </ul>
+    </div>
+    <div style="float: right; width: 400px">
+        <h1>Sakengali Kazhiyev</h1>
+        {% block body %} {% endblock%}
+    </div>
+</body>
+</html>

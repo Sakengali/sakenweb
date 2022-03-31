@@ -1,0 +1,16 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+}
+
+input {
+    background-color: rgb(132, 190, 223);
+}
+
+h1{
+    font-family:'Courier New', Courier, monospace;
+    font:xx-large;
+    opacity: 0.5;
+}

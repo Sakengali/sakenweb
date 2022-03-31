@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <title>quotes</title>
+    <style>
+        body {
+            width: 300px;
+        }
+    </style>
+{% endblock %}
+    
+
+{% block body %}
+    {%for quote in quotes %}
+        <p style="font-style: italic;">"{{quote}}" </p>
+        <p style="text-align: right "> {{quotes[quote]}} </p>
+    {%endfor%}
+{% endblock %}

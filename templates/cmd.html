@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cmd</title>
+
+    <style>
+        h1{
+            font-family:'Courier New', Courier, monospace;
+            font:xx-large;
+            opacity: 0.5;
+        }
+
+        #cmd{
+            font-family:'Courier New', Courier, monospace;
+            font-size: 16px;
+            position: absolute;
+            left: 25%;
+            padding-left: 2%;
+            padding-right: 2%;
+            padding-top: 2%;
+        }
+
+        #get{
+            color: bisque;
+        }
+
+        #type{
+            width: 24px;
+        }
+
+        #writing_draft_form{
+            position: absolute;
+            left: 77%;
+        }
+        #retrieve{
+            position: absolute;
+            left: 77%;        }
+
+        #save{
+            position: absolute;
+            left: 77%;
+        }
+    </style>
+    <script type="module" src="{{ url_for('static', filename='jsfile/cmd.js') }}"></script>
+</head>
+<body>
+    <div style="float:left; width:700px">
+        <h1>cmd</h1>
+        <p>A cmd-notebook to write essays, save their drafts, and download as things</p>
+        <input type="text" id="type" placeholder="type">
+        <br>
+        <button id="get">get</button>
+
+        <form action="/save" id="writing_form" method="POST">
+            <textarea name="cmd" form= "writing_form" id="cmd" cols="67" rows="50" autofocus >{% if writing_to_retrieve == None %}    
+                {% else %}{{writing_to_retrieve}}
+                {% endif %}
+            </textarea>
+                <input type="submit" value="save">
+        </form>
+
+        <form action="/retrieve", method="post">
+            <select name="writing_draft_form">
+                <option selected disabled >writings</option>
+                {% for title in writings %}
+                    <option name={{writings[title]}} id="{title}"> {{title}} </option>
+                {% endfor %}
+            </select>
+            <br>
+            <input type="submit" value="retrieve">
+        </form>
+    </div>
+
+    <div style="float:right; width:100px">
+        <ul>
+            <br>
+            <br>
+            <form action="/" method="get">
+                <input type="submit" value="back">
+        </ul>
+    </div>
+</body>
+</html>
+
+
+
+<!-- to save drafts: form, opens a chooser, drafts there by name, click, draft appears on textbox, 
+button save - adds to db,  if name exist - substitute
+-->
+
+create restoration 
