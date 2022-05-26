@@ -65,6 +65,3 @@ def save():
             writer.writerow((writing_name, writing_content))
     return(" ", 204 )
 
-
-    csv sucks, try saving in txt
-    https://stackoverflow.com/questions/27913261/python-storing-data
